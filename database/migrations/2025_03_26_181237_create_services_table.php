@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id')->constrained('clients');
-            $table->foreignId('car_id')->constrained('cars');
+            $table->foreignId('car_id'); // Azért nem hivatkozok a cars táblára, mert ez nem a cars táblában lévő id-ra mutat, hanem a cars táblában lévő client-hez tartozó car_id-jára
             $table->integer('log_number');
             $table->string('event');
-            $table->dateTime('event_time');
+            $table->dateTime('event_time')->nullable();
             $table->integer('document_id');
             $table->timestamps();
 

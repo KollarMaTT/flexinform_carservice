@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     protected $fillable = [
+        'id',
         'client_id',
         'car_id',
         'log_number',
@@ -23,6 +24,7 @@ class Service extends Model
 
     public function car()
     {
-        return $this->belongsTo(Car::class);
+        return $this->belongsTo(Car::class, 'car_id', 'car_id')
+            ->where('client_id', $this->client_id);
     }
 }
