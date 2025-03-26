@@ -12,7 +12,14 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::select('id', 'name', 'card_number')->paginate(10);
+        return response()->json(['clients' => $clients]);
+    }
+
+    public function cars(Client $client)
+    {
+        $cars = $client->cars()->select('car_id', 'type', 'registered', 'ownbrand','accidents')->get();
+        return response()->json(['cars' => $cars]);
     }
 
     /**

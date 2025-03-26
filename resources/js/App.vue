@@ -1,13 +1,13 @@
 <template>
   <div>
     <main>
-      <TestPage/>
+      <MainPage/>
     </main>
   </div>
 </template>
 
 <script setup>
-  import TestPage from './Pages/TestPage.vue';
+  import MainPage from './Pages/MainPage.vue';
 </script>
 
 <style scoped>
