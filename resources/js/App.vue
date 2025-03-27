@@ -1,13 +1,13 @@
 <template>
   <div>
     <main>
-      <MainPage/>
+      <ClientList/>
     </main>
   </div>
 </template>
 
 <script setup>
-  import MainPage from './Pages/MainPage.vue';
+  import ClientList from '@/Components/ClientList.vue';
 </script>
 
 <style scoped>

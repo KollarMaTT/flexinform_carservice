@@ -23,6 +23,15 @@ class Car extends Model
 
     public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany(Service::class, 'car_id', 'car_id')
+            ->where('client_id', $this->client_id);
+    }
+
+    public function getLastServiceAttribute()
+    {
+        return Service::where('car_id', $this->car_id)
+                      ->where('client_id', $this->client_id)
+                      ->orderByDesc('log_number')
+                      ->first();
     }
 }
