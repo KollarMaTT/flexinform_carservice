@@ -1,8 +1,6 @@
 # Car service teszt feladat
 
-[![Laravel Logo](https://laravel.com/img/logomark.min.svg)](https://laravel.com) [![Vue.js Logo](https://vuejs.org/images/logo.png)](https://vuejs.org)
-
-Ez a repository a Flexinform Integrált Kft. számára beadott car service teszt feladatot tartalmazza
+Ez a repository a Flexinform Integrált Kft. számára beadott car service teszt feladatot tartalmazza.
 
 ## Technológiák
 
@@ -20,7 +18,7 @@ Ez a repository a Flexinform Integrált Kft. számára beadott car service teszt
 
 2. **Navigálás a projekt mappába:**
     ```bash
-    cd flexinform_carservice
+    cd flexinform_carservice-main
     ```
 
 3. **Környezeti változók beállítása:**
@@ -51,7 +49,6 @@ Ez a repository a Flexinform Integrált Kft. számára beadott car service teszt
     ```
 
 8. **Frontend indítása:**
-    - Fejlesztői környezetben:
     ```bash
     npm run dev
     ```
