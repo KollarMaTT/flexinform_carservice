@@ -7,6 +7,7 @@ use App\Models\Client;
 use App\Models\Service;
 use App\Services\InsertDataService;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,9 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (Client::count() === 0 && Car::count() === 0 && Service::count() === 0) {
-            $insertDataService = $this->app->make(InsertDataService::class);
-            $insertDataService->execute();
+        if (Schema::hasTable('clients') && Schema::hasTable('cars') && Schema::hasTable('services')) {
+            if (Client::count() === 0 && Car::count() === 0 && Service::count() === 0) {
+                $insertDataService = $this->app->make(InsertDataService::class);
+                $insertDataService->execute();
+            }
         }
     }
 }
