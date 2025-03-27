@@ -20,7 +20,7 @@ class InsertDataService
         DB::transaction(function () {
 
             //Clients 
-            $json = Storage::get('data/clients.json');
+            $json = file_get_contents(public_path('data/clients.json'));
             
             $clients = json_decode($json, true);
 
@@ -33,7 +33,7 @@ class InsertDataService
             }
 
             // Cars
-            $json = Storage::get('data/cars.json');
+            $json = file_get_contents(public_path('data/cars.json'));
             
             $cars = json_decode($json, true);
 
@@ -50,7 +50,7 @@ class InsertDataService
             }
 
             // Services
-            $json = Storage::get('data/services.json');
+            $json = file_get_contents(public_path('data/services.json'));
 
             $services = json_decode($json, true);
 
