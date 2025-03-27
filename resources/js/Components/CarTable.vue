@@ -19,7 +19,7 @@
           <template v-for="car in cars" :key="car.id">
             <tr>
               <td @click="toggleCar(car)" style="cursor: pointer;">{{ car.car_id }}</td>
-              <td>{{ car.id }}</td>
+              <td>{{ car.type }}</td>
               <td>{{ car.registered }}</td>
               <td>
                 <span class="badge" :class="car.ownbrand === 1 ? 'text-bg-success' : 'text-bg-danger'">
